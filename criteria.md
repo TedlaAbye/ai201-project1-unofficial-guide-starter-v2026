@@ -55,9 +55,10 @@ in at least 4 of 5 tries.
 
 ---
 
-## 4. Something about your chunks
+## 4. Chunk size
 
-<!-- YOU WRITE THIS ONE.
+<!-- For at least 4 of 5 inspected chunks, the chunk contains a complete thought or 
+     answer without cutting a sentence in half at the beginning or end.-->
 
      How would you know if your chunks were the right size? Name something
      countable or observable.
@@ -72,14 +73,16 @@ in at least 4 of 5 tries.
 
 
 **Why this target:**
-
+<!--I chose 4 of 5 because the campus-life documents are relatively short, 
+   so most chunks should be able to contain complete pieces of information without needing the previous or next chunk.-->
 
 
 ---
 
-## 5. Your choice
+## 5. Answer accuracy
 
-<!-- YOU WRITE THIS ONE TOO.
+<!-- At least 4 of my 5 test answers contain the expected phrase and 
+    correctly answer the question using information from the retrieved documents. -->
 
      Pick something you actually care about getting right. It could be about
      speed, about refusals, about a particular kind of question your corpus
@@ -90,8 +93,9 @@ in at least 4 of 5 tries.
 
 
 **Why this target:**
-
-
+<!--I chose 4 of 5 because my five questions are based on specific facts 
+    from the campus-life corpus, so I expect the system to answer most of 
+    them correctly while allowing for one possible retrieval or generation error.-->
 
 ---
 

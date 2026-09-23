@@ -139,7 +139,7 @@ Laundry costs $1.75 wash, $1.75 dry, app-based. On noise: moderate; the building
 ```
 ```
 
-**My relevance cutoff:**
+**My relevance cutoff:** 0.55
 
 <!-- The number you set in config.py, and how you got there.
 
@@ -151,8 +151,24 @@ Laundry costs $1.75 wash, $1.75 dry, app-based. On noise: moderate; the building
      Milestone 4. -->
 
 | Question | In corpus? | Best distance |
+|1.| When is the deadline to add a course? |0.311|
+|2.| How is the housing lottery determined for juniors and seniors? |0.178|
+|3.| How much printing credit does each student receive per semester? |0.372|
+|4.| How long does a student account stay active after graduation? |0.368|
+|5.| When can you change your meal plan tier? |0.216|
+|  |  |  |
 |---|---|---|
 |  |  |  |
+| Question | OUT_OF_SCOPE | Best distance |
+|1.| What is the capital of Mongolia? |0.825|
+|2.| How do I change the oil in a diesel engine? |0.934|
+|3.| Who won the 1994 World Cup? |0.886|
+|4.| What is the recommended dosage of ibuprofen for a headache? |0.844|
+|5.| How do I write a for loop in Rust? |0.896|
+|  |  |  |
+|---|---|---|
+
+
 
 ## How I Used AI
 

@@ -1,6 +1,6 @@
 # The Unofficial Guide
 
-<!-- Replace this line with your name and which corpus you picked. -->
+<!-- Name: Tedla Abye and Corpus Selected: Campus_life -->
 
 > **This file is your submission.** Fill it in as you go — most sections get
 > written during the milestone that produces them, not at the end.
@@ -25,6 +25,11 @@
      questions your system answers. Write it for someone who has never seen
      this repo.
 
+--I picked campus life corpus.
+--The system can answer questions like course, student life and services in campus.
+--It say "I don't have enough information about that.", if the document does not contain the answer.
+--Generally this project is a retrieval-augmented question-answering system that uses a corpus of campus-life documents. The system retrieves relevant information from the documents and uses that information to answer questions about campus resources, services, policies, and student life. It is designed to answer questions using information contained in the provided documents rather than relying only on the model's general knowledge. When the documents do not contain enough relevant information, the system can identify the question as out of scope instead of making up an answer.
+ 
      Milestone 5. -->
 
 ## Chunking Strategy
@@ -133,13 +138,19 @@ Laundry costs $1.75 wash, $1.75 dry, app-based. On noise: moderate; the building
      visible. Milestone 4. -->
 
 **Question:**
-
+When is the deadline to add a course?
 **Answer:**
-
+You can add a course through the end of the second week (admin_add_drop_deadline.txt).
 ```
 ```
 
-**My relevance cutoff:** 0.55
+**My relevance cutoff:** 
+RELEVANCE_CUTOFF = 0.55
+
+I selected a cutoff of 0.55 because the in-scope questions
+had distances between 0.216 and 0.372, while the out-of-scope
+questions had distances between 0.825 and 0.934. The cutoff
+falls between the two groups.
 
 <!-- The number you set in config.py, and how you got there.
 
@@ -149,23 +160,25 @@ Laundry costs $1.75 wash, $1.75 dry, app-based. On noise: moderate; the building
      here — the table below wants all ten rows.
 
      Milestone 4. -->
-
-| Question | In corpus? | Best distance |
-|1.| When is the deadline to add a course? |0.311|
-|2.| How is the housing lottery determined for juniors and seniors? |0.178|
-|3.| How much printing credit does each student receive per semester? |0.372|
-|4.| How long does a student account stay active after graduation? |0.368|
-|5.| When can you change your meal plan tier? |0.216|
-|  |  |  |
+			In-scope question distances:
+| Question |           In corpus 							| Best distance |
+------------------------------------------------------------------------------------------------------------
+|1.	   | When is the deadline to add a course?		 			|0.311|
+|2.	   | How is the housing lottery determined for juniors and seniors? 		|0.178|
+|3.	   | How much printing credit does each student receive per semester? 		|0.372|
+|4.	   | How long does a student account stay active after graduation? 		|0.368|
+|5.	   | When can you change your meal plan tier? 					|0.216|
 |---|---|---|
-|  |  |  |
-| Question | OUT_OF_SCOPE | Best distance |
-|1.| What is the capital of Mongolia? |0.825|
-|2.| How do I change the oil in a diesel engine? |0.934|
-|3.| Who won the 1994 World Cup? |0.886|
-|4.| What is the recommended dosage of ibuprofen for a headache? |0.844|
-|5.| How do I write a for loop in Rust? |0.896|
-|  |  |  |
+         
+		 Out-of-scope question distances:
+
+| Question |           OUT_OF_SCOPE 					| Best distance |
+-----------------------------------------------------------------------------------------------------
+|1.	| What is the capital of Mongolia? 				|0.825|
+|2.	| How do I change the oil in a diesel engine? 			|0.934|
+|3.	| Who won the 1994 World Cup?				 	|0.886|
+|4.	| What is the recommended dosage of ibuprofen for a headache? 	|0.844|
+|5.	| How do I write a for loop in Rust? 				|0.896|
 |---|---|---|
 
 
@@ -181,9 +194,9 @@ Laundry costs $1.75 wash, $1.75 dry, app-based. On noise: moderate; the building
 
      Milestone 5. -->
 
-**1.**
+**1.** I chose to keep each document as a single chunk because most of the campus-life documents focus on one specific topic. Keeping each document together preserves the full context and avoids separating related information across multiple chunks. Since the documents are already relatively short, overlapping chunks was not necessary.
 
-**2.**
+**2.** I used AI to help me write and understand command-line commands while setting up and fixing issues in my development environment. I also used AI to help me understand each file in the campus-life corpus, including the purpose and information contained in each document. I reviewed the AI's suggestions and explanations myself so that I could understand how the project worked rather than simply copying the generated answers.
 
 <!-- ── Stretch features ─────────────────────────────────────────────────────
      Doing one? Say so here BEFORE you start. A feature this README never
